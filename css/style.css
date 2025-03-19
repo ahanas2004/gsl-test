@@ -1,0 +1,586 @@
+:root {
+    --primary: #FF3E41;
+    --secondary: #51CFED;
+    --light: #F8F2F0;
+    --dark: #060315;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+/*** Navbar ***/
+.navbar {
+    height: 100px; /* Increase navbar height */
+    background-color: #FF4C4C; /* Set navbar background color to red */
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
+}
+
+.navbar-brand img {
+    height: 60px; /* Increase logo height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add spacing between logo and text */
+}
+
+
+.navbar-brand h2 {
+    font-size: 28px; /* Increase company name font size */
+    margin: 0;
+    color: white; /* Set text color to white */
+}
+
+.navbar-toggler {
+    padding: 0.75rem 1rem; /* Increase padding for burger button */
+    font-size: 1.5rem; /* Increase burger button size */
+    align-self: center; /* Align burger button vertically */
+}
+
+.navbar-toggler-icon {
+    width: 2em; /* Increase burger icon size */
+    height: 2em;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px; /* Increase font size for nav links */
+    padding: 35px 15px; /* Increase padding for nav links */
+    color: white; /* Set nav link color to white */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar {
+        height: auto; /* Allow navbar to adjust height on smaller screens */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        background-color: #FF4C4C; /* Maintain red background on smaller screens */
+    }
+
+    .navbar-brand img {
+        height: 50px; /* Adjust logo height for smaller screens */
+    }
+
+    .navbar-brand h2 {
+        font-size: 22px; /* Adjust company name font size for smaller screens */
+        color: white; /* Set text color to white */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px; /* Adjust font size for nav links on smaller screens */
+        padding: 15px 0; /* Adjust padding for nav links on smaller screens */
+        color: white; /* Set nav link color to white */
+    }
+
+    .navbar-toggler {
+        padding: 0.5rem 0.75rem; /* Adjust burger button padding for smaller screens */
+        font-size: 1.25rem; /* Adjust burger button size for smaller screens */
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5em; /* Adjust burger icon size for smaller screens */
+        height: 1.5em;
+    }
+}
+/*** Navbar end ***/
+/*** Header ***/
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 500px;
+    }
+    
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item h5,
+    .header-carousel .owl-carousel-item p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-header {
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** About ***/
+@media (min-width: 992px) {
+    .container.about {
+        max-width: 100% !important;
+    }
+
+    .about-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Feature ***/
+@media (min-width: 992px) {
+    .container.feature {
+        max-width: 100% !important;
+    }
+
+    .feature-text  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Service, Price & Team ***/
+.service-item,
+.price-item,
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item img,
+.team-item img {
+    transition: .5s;
+}
+
+.service-item:hover img,
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item a.btn-slide,
+.price-item a.btn-slide,
+.team-item div.btn-slide {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.service-item a.btn-slide i,
+.service-item a.btn-slide span,
+.price-item a.btn-slide i,
+.price-item a.btn-slide span,
+.team-item div.btn-slide i,
+.team-item div.btn-slide span {
+    position: relative;
+    height: 40px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 0 35px 35px 0;
+    transition: .5s;
+    z-index: 2;
+}
+
+.team-item div.btn-slide span a i {
+    padding: 0 10px;
+}
+
+.team-item div.btn-slide span a:hover i {
+    background: var(--secondary);
+}
+
+.service-item a.btn-slide span,
+.price-item a.btn-slide span,
+.team-item div.btn-slide span {
+    padding-left: 0;
+    left: -100%;
+    z-index: 1;
+}
+
+.service-item:hover a.btn-slide i,
+.price-item:hover a.btn-slide i,
+.team-item:hover div.btn-slide i {
+    border-radius: 0;
+}
+
+.service-item:hover a.btn-slide span,
+.price-item:hover a.btn-slide span,
+.team-item:hover div.btn-slide span {
+    left: 0;
+}
+
+.service-item a.btn-slide:hover i,
+.service-item a.btn-slide:hover span,
+.price-item a.btn-slide:hover i,
+.price-item a.btn-slide:hover span {
+    background: var(--secondary);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-item {
+    position: relative;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    animation: pulse 1s ease-out .5s;
+}
+
+.testimonial-carousel .owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
+    border: 5px solid var(--light);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--light);
+    border-color: var(--primary);
+}
+
+
+/*** Contact ***/
+@media (min-width: 992px) {
+    .container.contact-page {
+        max-width: 100% !important;
+    }
+
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+/* Gallery Section Styles */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    gap: 15px; /* Space between images */
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .gallery-container img {
+        height: 200px; /* Adjust height for mobile */
+    }
+}
+
+/*** services ***/
+.service-hero {
+    background: url('img/air-freight-hero.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.service-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.service-content {
+    padding: 60px 0;
+}
+
+.service-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.service-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.service-features {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-features h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.service-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.service-features ul li i {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.cta-section {
+    background-color:#141165 ;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.cta-section .btn {
+    background-color: #fff;
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
